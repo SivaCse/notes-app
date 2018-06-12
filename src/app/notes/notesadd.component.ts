@@ -39,9 +39,15 @@ export class NotesAddComponent implements OnInit {
   createForm() {
     this.notesForm = this.fb.group({
       category: new FormControl("", [Validators.required]),
-      topic: new FormControl("", [Validators.required]),
+      topic: new FormControl("", [
+        Validators.required,
+        Validators.minLength(3)
+      ]),
       postName: new FormControl("", [Validators.required]),
-      postDesc: new FormControl("", [Validators.required])
+      postDesc: new FormControl("", [
+        Validators.required,
+        Validators.minLength(20)
+      ])
     });
   }
 
