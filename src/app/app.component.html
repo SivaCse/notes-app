@@ -1,18 +1,20 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <mat-sidenav-container class="example-container">
-    <mat-sidenav mode="side" opened>
-      <nav>
-        <a routerLink="/categories">Category</a>
-        <a routerLink="/topics">Topic</a>
-      </nav>
-      
-    </mat-sidenav>
-  
-    <mat-sidenav-content>
-      <router-outlet></router-outlet>
-    </mat-sidenav-content>
-  </mat-sidenav-container>
+<div>
+  <mat-toolbar color="primary">
+    
+    <span>Notes  App</span>
+    <button mat-button>Category</button>
+    <button mat-button>Topic</button>
+    <button mat-button>Notes</button>
+    
+  </mat-toolbar>
+  <mat-menu x-position="before" #menu="matMenu">
+    <button mat-menu-item>Option 1</button>
+    <button mat-menu-item>Option 2</button>
+  </mat-menu>
+
+  <mat-card>
+    
+  </mat-card>
 </div>
 
 
