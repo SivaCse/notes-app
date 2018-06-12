@@ -9,8 +9,6 @@ export class NotesService {
   constructor(private http: HttpClient) {}
 
   getNotes({ url }): Observable<any> {
-    return this.http
-      .get<any>(BASE_API_URL + url)
-      .pipe(tap(data => console.log(data)));
+    return this.http.get<any>(BASE_API_URL + url);
   }
 }

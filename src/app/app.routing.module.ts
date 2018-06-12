@@ -4,6 +4,7 @@ import { RouterModule, Routes } from "@angular/router";
 import { AppComponent } from "./app.component";
 
 const routes: Routes = [
+  { path: "", redirectTo: "/notes", pathMatch: "full" },
   {
     path: "categories",
     loadChildren: "app/categories/categories.module#CategoriesModule"
@@ -11,10 +12,6 @@ const routes: Routes = [
   {
     path: "notes",
     loadChildren: "app/notes/notes.module#NotesModule"
-  },
-  {
-    path: "**",
-    redirectTo: "notes"
   }
 ];
 
