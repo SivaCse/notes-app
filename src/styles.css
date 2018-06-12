@@ -1,2 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.top_toolbar span {
+    margin-right: 20px;
+}
+
+.top_toolbar  .mat-raised-button {
+    margin-right: 20px;
+}

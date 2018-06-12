@@ -1,21 +1,28 @@
 <div>
-  <mat-toolbar color="primary" class="top_toolbar">
-    
-    <span>Notes  App</span>
-    <button mat-raised-button color="accent">Category</button>
-    <button mat-raised-button color="accent">Topic</button>
-    <button mat-raised-button color="accent">Notes</button>
-    
-  </mat-toolbar>
-  <mat-menu x-position="before" #menu="matMenu">
-    <button mat-menu-item>Option 1</button>
-    <button mat-menu-item>Option 2</button>
-  </mat-menu>
 
-  <mat-card>
-    <router-outlet></router-outlet>    
-  </mat-card>
-  
+        <mat-toolbar color="primary" class="top_toolbar">
+            <span routerLink="/">
+              <mat-icon>home</mat-icon>Notes App</span>
+            <button mat-raised-button color="accent" routerLink="/categories">
+              <mat-icon>C</mat-icon>Category</button>
+            <button mat-raised-button color="accent" routerLink="/topics">
+              <mat-icon>title</mat-icon>Topic</button>
+            <button mat-raised-button color="accent" routerLink="/notes">
+              <mat-icon>notes</mat-icon>Notes</button>
+          </mat-toolbar>
+        
+          <mat-card>
+              <mat-sidenav-container>
+                  <mat-sidenav mode="side" opened>
+                      <mat-list>
+                          <mat-list-item><mat-icon>list</mat-icon> List </mat-list-item>
+                          <mat-list-item><mat-icon>add</mat-icon> Create </mat-list-item>
+                         </mat-list>
+                  </mat-sidenav>
+                  <mat-sidenav-content>
+                    <router-outlet></router-outlet>
+                  </mat-sidenav-content>
+                </mat-sidenav-container>
+          </mat-card>
+    
 </div>
-
-
