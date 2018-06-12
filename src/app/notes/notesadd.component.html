@@ -1,0 +1,31 @@
+<div>
+    <mat-card>
+        <mat-card-title>
+            <mat-icon>add</mat-icon>Create Notes</mat-card-title>
+        <mat-card-content>
+            <div class="notes-create">
+                <form (ngSubmit)="saveNotes(notesForm.value)" [formGroup]="notesForm" class="notes-create-form">
+                <mat-form-field>
+                    <mat-select placeholder="Category" formControlName="category">
+                        <mat-option *ngFor="let category of categories | async" value="{{category._id}}">{{category.categoryName}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <mat-select placeholder="Topic" formControlName="topic">
+                            <mat-option *ngFor="let topic of topics | async" value="{{topic._id}}">{{topic.topicName}}</mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field>
+                    <input matInput placeholder="Title" formControlName="postName">
+                </mat-form-field>
+
+                <mat-form-field>
+                    <textarea matInput placeholder="Description" formControlName="postDesc"></textarea>
+                </mat-form-field>
+                <button  mat-raised-button color="primary">Save</button>
+                </form>
+
+            </div>
+        </mat-card-content>
+    </mat-card>
+</div>

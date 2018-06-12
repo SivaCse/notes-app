@@ -1,13 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { NgModule } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
-import { TopicsRoutingModule } from './topics-routing.module';
+import { TopicsRoutingModule } from "./topics-routing.module";
+import { TopicsService } from "./topics.service";
 
 @NgModule({
-  imports: [
-    CommonModule,
-    TopicsRoutingModule
-  ],
-  declarations: []
+  imports: [CommonModule, TopicsRoutingModule],
+  declarations: [TopicsService]
 })
-export class TopicsModule { }
+export class TopicsModule {}

@@ -1,15 +1,13 @@
-import { Component, OnInit } from '@angular/core';
+import { CategoriesService } from "./categories.service";
+import { Component, OnInit } from "@angular/core";
 
 @Component({
-  selector: 'app-categories',
-  templateUrl: './categories.component.html',
-  styleUrls: ['./categories.component.css']
+  selector: "app-categories",
+  templateUrl: "./categories.component.html",
+  styleUrls: ["./categories.component.css"]
 })
 export class CategoriesComponent implements OnInit {
+  constructor(private categoriesService: CategoriesService) {}
 
-  constructor() { }
-
-  ngOnInit() {
-  }
-
+  ngOnInit() {}
 }

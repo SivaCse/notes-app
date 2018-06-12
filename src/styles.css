@@ -8,3 +8,12 @@
 .top_toolbar  .mat-raised-button {
     margin-right: 20px;
 }
+
+.notes-create-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .notes-create-form {
+    width: 50%;
+  }

@@ -5,14 +5,10 @@ import { Observable } from "rxjs";
 import { catchError, map, tap } from "rxjs/operators";
 
 @Injectable()
-export class NotesService {
+export class CategoriesService {
   constructor(private http: HttpClient) {}
 
-  getNotes({ url }): Observable<any> {
+  getCategories({ url }): Observable<any> {
     return this.http.get<any>(BASE_API_URL + url);
-  }
-
-  addNote({ url, data, options }): Observable<any> {
-    return this.http.post<any>(BASE_API_URL + url, data);
   }
 }
