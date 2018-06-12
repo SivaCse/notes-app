@@ -1,10 +1,10 @@
 <div>
-  <mat-toolbar color="primary">
+  <mat-toolbar color="primary" class="top_toolbar">
     
     <span>Notes  App</span>
-    <button mat-button>Category</button>
-    <button mat-button>Topic</button>
-    <button mat-button>Notes</button>
+    <button mat-raised-button color="accent">Category</button>
+    <button mat-raised-button color="accent">Topic</button>
+    <button mat-raised-button color="accent">Notes</button>
     
   </mat-toolbar>
   <mat-menu x-position="before" #menu="matMenu">
@@ -13,8 +13,9 @@
   </mat-menu>
 
   <mat-card>
-    
+    <router-outlet></router-outlet>    
   </mat-card>
+  
 </div>
 
 
