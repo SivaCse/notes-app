@@ -1,19 +1,19 @@
-import { TopicsService } from "./../topics/topics.service";
-import { CategoriesService } from "./../categories/categories.service";
-import { Component, OnInit } from "@angular/core";
-import { NotesService } from "./notes.service";
-import { DataSource } from "@angular/cdk/collections";
-import { Observable } from "rxjs/Observable";
+import { TopicsService } from './../topics/topics.service';
+import { CategoriesService } from './../categories/categories.service';
+import { Component, OnInit } from '@angular/core';
+import { NotesService } from './notes.service';
+import { DataSource } from '@angular/cdk/collections';
+import { Observable } from 'rxjs/Observable';
 import {
   FormBuilder,
   FormGroup,
   FormControl,
   Validators
-} from "@angular/forms";
+} from '@angular/forms';
 
 @Component({
-  selector: "app-notesadd",
-  templateUrl: "./notesadd.component.html"
+  selector: 'app-notesadd',
+  templateUrl: './notesadd.component.html'
 })
 export class NotesAddComponent implements OnInit {
   notesForm: FormGroup;
@@ -28,23 +28,23 @@ export class NotesAddComponent implements OnInit {
 
   ngOnInit() {
     this.categories = this.categoriesService.getCategories({
-      url: "/categories"
+      url: '/categories'
     });
     this.topics = this.topicsService.getTopics({
-      url: "/topics"
+      url: '/topics'
     });
     this.createForm();
   }
 
   createForm() {
     this.notesForm = this.fb.group({
-      category: new FormControl("", [Validators.required]),
-      topic: new FormControl("", [
+      category: new FormControl('', [Validators.required]),
+      topic: new FormControl('', [
         Validators.required,
         Validators.minLength(3)
       ]),
-      postName: new FormControl("", [Validators.required]),
-      postDesc: new FormControl("", [
+      postName: new FormControl('', [Validators.required]),
+      postDesc: new FormControl('', [
         Validators.required,
         Validators.minLength(20)
       ])
@@ -54,8 +54,9 @@ export class NotesAddComponent implements OnInit {
   saveNotes(formValues: FormGroup) {
     if (this.notesForm.valid) {
       const postData = {
-        url: "/notes",
-        data: formValues
+        url: '/notes',
+        data: formValues,
+        options: {}
       };
       this.notesService.addNote(postData).subscribe();
     }

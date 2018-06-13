@@ -1,18 +1,18 @@
-import { NgModule } from "@angular/core";
-import { RouterModule, Routes } from "@angular/router";
+import { NgModule } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-import { AppComponent } from "./app.component";
+import { AppComponent } from './app.component';
 
 const routes: Routes = [
-  { path: "", redirectTo: "/notes", pathMatch: "full" },
   {
-    path: "categories",
-    loadChildren: "app/categories/categories.module#CategoriesModule"
+    path: 'categories',
+    loadChildren: 'app/categories/categories.module#CategoriesModule'
   },
   {
-    path: "notes",
-    loadChildren: "app/notes/notes.module#NotesModule"
-  }
+    path: 'notes',
+    loadChildren: 'app/notes/notes.module#NotesModule'
+  },
+  { path: '', redirectTo: '', pathMatch: 'full' }
 ];
 
 @NgModule({
