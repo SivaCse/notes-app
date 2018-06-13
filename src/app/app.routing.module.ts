@@ -12,6 +12,10 @@ const routes: Routes = [
     path: 'notes',
     loadChildren: 'app/notes/notes.module#NotesModule'
   },
+  {
+    path: 'topics',
+    loadChildren: 'app/topics/topics.module#TopicsModule'
+  },
   { path: '', redirectTo: '', pathMatch: 'full' }
 ];
 
